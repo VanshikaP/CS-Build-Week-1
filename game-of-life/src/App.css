@@ -1,0 +1,62 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: aliceblue;
+}
+.main-container{
+  margin: 0;
+  padding: 0% 5%;
+  color: darkslategray;
+  max-width: 100%;
+}
+
+.main-header{
+  text-align: center;
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+.game{
+  min-width: 80%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 5% auto;
+}
+
+.game-of-life{
+  /* margin: 0 5%; */
+  border: 3px solid darkslateblue;
+  /* padding: 10%; */
+  width: 50%;
+  min-height: 40vh;
+  text-align: center;
+  font-size: 3vw;
+}
+
+.buttons-container{
+  width: 30%;
+  text-align: center;
+  /* padding: 10%; */
+  /* border: 2px solid red; */
+  font-size: 3vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-header{
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.button{
+  margin: 5%;
+  padding: 2% 5%;
+  font-size: 0.8vw;
+  border-radius: 0.3vw;
+}
+.button:hover{
+  background-color: dimgray;
+  color: white;
+}
