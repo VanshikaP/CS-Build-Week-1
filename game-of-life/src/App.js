@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import GameOfLife from './components/GameOfLife';
-import Buttons from './components/Buttons';
 import About from './components/About';
 
 function App() {
@@ -13,10 +12,7 @@ function App() {
         </p>
       </header>
       <div className='main-container-body'>
-        <div className='game'>
-          <GameOfLife />
-          <Buttons />
-        </div>
+        <GameOfLife />
         <div className = 'about'>
           <About />
         </div>
