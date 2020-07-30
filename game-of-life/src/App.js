@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import GameOfLife from './components/GameOfLife';
+// import GameOfLife from './components/GameOfLife';
+import Game from './components/Game';
 import About from './components/About';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
         </p>
       </header>
       <div className='main-container-body'>
-        <GameOfLife />
+        {/* <GameOfLife /> */}
+        <Game />
         <div className = 'about'>
           <About />
         </div>

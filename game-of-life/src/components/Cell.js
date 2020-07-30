@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function Cell({i, j, cellSize}){
+export default function Cell({x, y, cellSize}){
     return (
         <div className='cell'
             style={{
-                width: `${cellSize}px`,
-                height: `${cellSize}px`,
-                left: `${cellSize * j + 1}px`,
-                top: `${cellSize * i + 1}px`
+                width: `${cellSize - 1}px`,
+                height: `${cellSize - 1}px`,
+                left: `${cellSize * x + 1}px`,
+                top: `${cellSize * y + 1}px`
             }}
         />
     )
