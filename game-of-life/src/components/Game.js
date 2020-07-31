@@ -145,15 +145,15 @@ export default function Game(){
             isRunning: true
         });
         // runIteration();
-        // setIntervalHandler(window.setInterval(() => {
-        //     // console.log('updating')
-        //     runIteration();
-        // }, game.interval));
-        let count = 1
-        window.setInterval(() => {
-            console.log('hello', count);
-            count ++
-        }, 1000)
+        setIntervalHandler(window.setInterval(() => {
+            // console.log('updating')
+            runIteration();
+        }, game.interval));
+        // let count = 1
+        // window.setInterval(() => {
+        //     console.log('hello', count);
+        //     count ++
+        // }, 1000)
     }
 
     // stop game
@@ -211,12 +211,33 @@ export default function Game(){
     }
 
     // handle custom grid size
-    const handleChange = e => {
+    const handleCellChange = e => {
+        console.log(e.target.value, grid.rows, grid.cols);
         setGrid({
             ...grid,
-            [e.target.name]: e.target.value
+            cellSize: e.target.value,
+            // rows: Math.floor(grid.height / e.target.value),
+            // cols: Math.floor(grid.width / e.target.value)
         })
     }
+
+    const handleDimensionChange = e => {
+        setGrid({
+            ...grid,
+            height: e.target.value,
+            width: e.target.value,
+            // rows: Math.floor(e.target.value / grid.cellSize),
+            // cols: Math.floor(e.target.value / grid.cellSize)
+        })
+    }
+
+    // useEffect(() => {
+    //     setGrid({
+    //         ...grid,
+    //         rows: Math.floor(grid.height / grid.cellSize),
+    //         cols: Math.floor(grid.width / grid.cellSize)
+    //     })
+    // }, [grid.height, grid.cellSize])
 
     // handle interval change manually
     const handleIntervalChange = e => {
@@ -247,18 +268,13 @@ export default function Game(){
                 <p className='generation-counter'>Generation: {game.generation}</p>
                 <div className='input-container'>
                     <div className='input'>
-                        <label htmlFor='height'>Grid Height</label>
-                        <input className='grid-size-input' type='text' id ='height' name='height' value={grid.height} onChange={handleChange}></input>
-                    </div>
-
-                    <div className='input'>
-                        <label htmlFor='width'>Grid Width</label>
-                        <input className='grid-size-input' type='text' id='width' name='width' value={grid.width} onChange={handleChange}></input>
+                        <label htmlFor='height'>Grid Size</label>
+                        <input className='grid-size-input' type='text' id ='height' name='height' value={grid.height} onChange={handleDimensionChange}></input>
                     </div>
 
                     <div className='input'>
                         <label htmlFor='height'>Cell Size</label>
-                        <input className='grid-size-input' type='text' id='cellSize' name='cellSize' value={grid.cellSize} onChange={handleChange}></input>
+                        <input className='grid-size-input' type='text' id='cellSize' name='cellSize' value={grid.cellSize} onChange={handleCellChange}></input>
                     </div>
 
                     <div className='input'>
@@ -277,46 +293,46 @@ export default function Game(){
                 runIteration = {runIteration}
             /> */}
             <div className='buttons-container'>
-            <div className='buttons-header'>
-                Controls
+                <div className='buttons-header'>
+                    Controls
+                </div>
+                <div className='button-div'>
+                    <button className='button' onClick={handleRandom}>
+                        Random Fill
+                    </button>
+                </div>
+                <div className='button-div'>
+                    <button className='button' onClick={handleClear}>
+                        Clear
+                    </button>
+                </div>
+                <div className='button-div'>
+                    <button className='button' onClick={handleRun}>
+                        Run
+                    </button>
+                </div>
+                <div className='button-div'>
+                    <button className='button' onClick={handleStop}>
+                        Stop
+                    </button>
+                </div>
+                <div className='button-div'>
+                    <button className='button' onClick={makeFaster}>
+                        Faster
+                    </button>
+                </div>
+                <div className='button-div'>
+                    <button className='button' onClick={makeSlower}>
+                        Slower
+                    </button>
+                </div>
+                <div className='button-div'>
+                    <button className='button' onClick={runIteration}>
+                        Next Generation
+                    </button>
+                </div>
+                
             </div>
-            <div className='button-div'>
-                <button className='button' onClick={handleRandom}>
-                    Random Fill
-                </button>
-            </div>
-            <div className='button-div'>
-                <button className='button' onClick={handleClear}>
-                    Clear
-                </button>
-            </div>
-            <div className='button-div'>
-                <button className='button' onClick={handleRun}>
-                    Run
-                </button>
-            </div>
-            <div className='button-div'>
-                <button className='button' onClick={handleStop}>
-                    Stop
-                </button>
-            </div>
-            <div className='button-div'>
-                <button className='button' onClick={makeFaster}>
-                    Faster
-                </button>
-            </div>
-            <div className='button-div'>
-                <button className='button' onClick={makeSlower}>
-                    Slower
-                </button>
-            </div>
-            <div className='button-div'>
-                <button className='button' onClick={runIteration}>
-                    Next Generation
-                </button>
-            </div>
-            
-        </div>
         </div>
     )
 }
