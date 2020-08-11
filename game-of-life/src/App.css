@@ -1,0 +1,107 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: black;
+  background-image: url('https://jonathanfrech.files.wordpress.com/2016/02/conways-game-of-life-1.gif');
+  background-size: contain;
+}
+.main-container{
+  margin: 0;
+  padding: 0% 5%;
+  color: white;
+  max-width: 100%;
+}
+
+.main-header{
+  text-align: center;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+.game{
+  min-width: 80%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 5% auto;
+}
+
+.game-of-life{
+  /* padding: 10%; */
+  text-align: center;
+  font-size: 3.5vw;
+}
+
+.game-grid{
+  /* background-color: rgba(0,0,0,0.6); */
+  background-color: black;
+  background-image:    linear-gradient(#333 1px, transparent 1px),    linear-gradient(90deg, #333 1px, transparent 1px);
+  position: relative;
+  margin: 0 auto;
+  border: 5px antiquewhite solid;
+}
+
+.cell{
+  /* background: white; */
+  position: absolute;
+  /* width: 40px;
+  height: 40px; */
+}
+.buttons-container{
+  width: 30%;
+  text-align: center;
+  /* margin: auto 10%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-header{
+  font-size: 2vw;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+
+.button{
+  margin: 5%;
+  padding: 2% 5%;
+  width: 80%;
+  font-size: 1.5vw;
+  border-radius: 1vw;
+}
+
+.button:hover{
+  background-color: dimgray;
+  color: white;
+}
+
+.input-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 1vw;
+}
+
+.input{
+  margin: 2%;
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+input{
+  font-size: 1.2vw;
+}
+
+.generation-counter{
+  font-size: 1.2vw;
+}
+.about-header{
+  font-size: 2vw;
+}
+
+.about-content{
+  font-size: 1.2vw;
+  line-height: 2vw;
+  text-align: justify;
+}
